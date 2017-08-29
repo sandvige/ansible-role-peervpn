@@ -9,9 +9,9 @@
   tags:
     - peervpn
 
-- name: Download statically linked Linux binary
-  get_url:
-    url: https://peervpn.net/files/{{peervpn_version}}-linux-x86.tar.gz
+- name: Copy statically linked Linux binary
+  copy:
+    src: /tmp/{{peervpn_version}}-linux-x86.tar.gz
     dest: "{{peervpn_install_directory}}/{{peervpn_version}}.tar.gz"
     mode: 0440
   tags:
